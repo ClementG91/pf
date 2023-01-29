@@ -1,0 +1,25 @@
+@mixin heading-shadow($colour:lightness-shift($colour-primary), $offset: $heading-shadow-size){
+    text-shadow: $offset $offset $colour;
+}
+
+@mixin border($colour:$colour-primary) {
+    border: 4px double $colour;
+    &:hover {
+        background-color: $colour-accent;
+    }
+}
+
+@mixin img-ratio {
+    width: 100%;
+        display: block;
+        overflow: hidden;
+        padding-top: 56.25%;
+        position: relative;
+        & img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            transform: translate(-50%, -50%);
+        }
+}

@@ -1,0 +1,69 @@
+{% load static %}
+<html>
+    <head>
+        <title>PF GC</title>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+    </head>
+    <body>
+        <div class="sidebar">
+            <h1>Site 1</h1>
+            {% if user.is_authenticated %}
+                <p>Salut, {{ user }} !</p>
+                {% if user.profile_photo %}
+                    <img class="avatar" src={{ user.profile_photo.url }}>
+                {% else %}
+                    <img class="avatar" src="{% static 'img/default_profile.png'%}">
+                {% endif %}
+                <p><a href="{% url 'home' %}">Accueil</a></p>
+                <p><a href="{% url 'photo_profil_upload' %}">Changer de photo de profil</a></p>
+                {% if perms.portefolio.add_photo %}
+                    <p><a href="{% url 'photo_upload' %}">Télécharger une photo</a></p>
+                    <p><a href="{% url 'create_multiple_photos' %}">Télécharger plusieurs photos</a></p>
+                    <p><a href="{% url 'blog_create' %}">Écrire un article</a></p>
+                {% endif %}
+                <p><a href="{% url 'follow_users' %}">Suivre des utilisateurs</a></p>
+                <p><a href="{% url 'password_change' %}">Changer le mot de passe</a></p>
+                <p><a href="{% url 'logout' %}">Se déconnecter</a></p>
+                {% else %}
+                <a href="{% url 'signup' %}">Inscrivez-vous</a>
+            {% endif %}
+        </div>
+        <header>
+            <div id="en_tete">
+                <h1>Entrainement Django+Html+CSS(Scss)</h1>
+                <div id="logo">
+                    <img src="{% static 'img/logo.png' %}" title="Logo"/>
+                </div>
+            </div>
+        </header>
+        <nav>
+            <ul>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'home' %}">Accueil</a></li>
+                <li><a href="{% url 'cv' %}">CV</a></li>
+                {% else %}
+                <a href="{% url 'signup' %}">Inscrivez-vous</a>
+                {% endif %}
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="main">
+            {% block content %}{% endblock content %}
+        </div>
+        <footer>
+            <div id ="contact">
+                <ul>
+                    <h3>Contact</h3>
+                    <li><a href="#">Mail: Clement.genest91@laposte.net</a></li>
+                    <li><a href="#">Tél: 06.42.80.55.76</a></li>
+                </ul>
+            </div>
+            <div id ="social_media">
+                <h3>Social Média</h3>
+                <a href="https://twitter.com/Evilstyle91" target="_blank" title="Twitter"><img src="{% static 'img/twitter.png' %}" alt="Twitter"/></a>
+                <a href="https://github.com/evilstyle91" target="_blank" title="GitHub"><img src="{% static 'img/github.png' %}" alt="GitHub"/></a>
+                <a href="https://open.spotify.com/user/21i63b4lwsqd5ghsadwj7m2vi?si=df16191526ef4a61" target="_blank" title="Spotify"><img src="{% static 'img/spotif.png' %}" alt="Spotify"/></a>
+            </div>
+        </footer>
+    </body>
+</html>

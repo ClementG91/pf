@@ -1,0 +1,34 @@
+/* The sidebar menu */
+.sidebar {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 220px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: $colour-secondary;
+    border-top-right-radius: 5px;
+    box-shadow: 6px 6px 6px $colour-accent;
+    color: $colour-white;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    a {
+        display: block;
+        background-color: $colour-secondary;
+        border-radius: 10px;
+        @include border;
+        color: $colour-white;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px;
+        &:hover {
+            color: $colour-hover;
+            box-shadow: 2px 2px 2px $colour-accent;
+        }
+      }
+      @media all and (max-width: 1024px) {
+        display: none;
+    }
+}

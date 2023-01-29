@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="post">
+    {%for project in page_obj %}
+        {% include 'project/partials/project_snippet.html' %}
+    {% endfor %}
+</div>
+{% endblock content %}

@@ -1,0 +1,9 @@
+body {
+    box-sizing: border-box;
+    background: $colour-primary;
+    margin-left: 240px; /* Same as the width of the sidebar */
+    padding: 20px;
+    @media all and (max-width: 1024px) {
+        margin-left: 0px;
+    }
+}

@@ -1,0 +1,16 @@
+aside
+{
+    flex: auto;
+    position: relative;
+    background-color: $colour-secondary;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 5px;
+    color: $colour-primary;
+    font-size: 0.9em;
+    text-align: center;
+    li {
+        list-style-type: none;
+    }
+}
+

@@ -1,0 +1,11 @@
+{
+  "name": "photo-django",
+  "version": "1.0.0",
+  "description": "test scss django",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./scss/main.scss:./static/style.css"
+  },
+  "author": "evil",
+  "license": "ISC"
+}

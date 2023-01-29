@@ -1,0 +1,9 @@
+{% load project_extras %}
+<div class="post">
+    <a href="{% url 'view_project' project.id %}">
+        <h4>Billet : {{ project.title }}</h4>
+        <img src="{{ project.photo.image.url }}">
+        <p><strong>Écrit par {{ project.author }}</strong></p>
+        <p>{{ project.date_created|get_posted_at_display }}</p>
+    </a>
+</div>

@@ -1,0 +1,33 @@
+/*Navigation*/
+nav {
+    margin-bottom: 10px;
+        ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: space-around;
+            border-radius: 5px;
+            padding: 5px 5px 5px 5px;
+            
+            a {
+                font-size: 1.3em;
+                padding-left: 5px;
+                padding-right: 5px;
+                text-decoration: none;
+                background-color: $colour-secondary;
+                color: $colour-primary;
+                text-align: center;
+                border-radius: 10px;
+                @include border;
+                &:hover {
+                color: $colour-hover;
+                box-shadow: 3px 3px 3px $colour-accent;
+                }
+            }
+            @media all and (max-width: 1024px) {
+                font-size: larger;
+            }
+        }
+}
+
+
+

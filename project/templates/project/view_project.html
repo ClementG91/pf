@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>{{ project.title }}</h2>
+    <img src="{{ project.photo.image.url }}">
+    <p>{{ project.photo.caption }}</p>
+    <p>{{ project.content }}</p>
+{% endblock content %}
